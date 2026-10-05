@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# Database backups
+*.sql
+
+# ML dataset
+dataset/
+
+train/
+
+# Frontend
+node_modules/
+dist/
+
+# ML model files
+*.h5
+*.keras
+*.pkl
+*.joblib
+
+# SQLite
+db.sqlite3
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store

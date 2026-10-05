@@ -1,0 +1,1425 @@
+html,
+body,
+#root {
+
+  overflow-x: hidden;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+.farmer-layout {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  background: #f5f7f4;
+}
+
+.sidebar-item.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.sidebar-item.disabled:hover {
+  background: transparent;
+  color: inherit;
+}
+
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.farmer-sidebar {
+  width: 250px;
+  height: 100vh;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    linear-gradient(
+      180deg,
+      #003b2f 0%,
+      #004b3a 55%,
+      #00634a 100%
+    );
+    color: white;
+
+  border-right: 1px solid #e5e9e4;
+
+  z-index: 1000;
+}
+
+
+/* Logo */
+
+.sidebar-logo {
+  padding: 18px 15px 15px;
+  text-align: center;
+
+  border-bottom: 1px solid #edf0ec;
+}
+
+.sidebar-logo img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+}
+
+.sidebar-logo h2 {
+  margin: 5px 0 3px;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #164c2d;
+}
+
+.sidebar-logo h2 span {
+  color: #4b9b54;
+}
+
+.sidebar-logo p {
+  margin: 0;
+
+  font-size: 10px;
+
+  color: #879287;
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.sidebar-menu {
+  flex: 1;
+
+  padding: 15px 10px;
+
+  overflow-y: auto;
+  color: white;
+}
+
+
+
+
+.sidebar-item {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 11px 13px;
+
+  margin-bottom: 4px;
+
+  border-radius: 8px;
+
+  color: white;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition: all 0.2s ease;
+}
+
+.sidebar-item:hover {
+  background: gray;
+  color: white;
+}
+
+.sidebar-item.active {
+   background: linear-gradient(
+    90deg,
+    #079b69,
+    #087c58
+  );
+  color: white;
+  font-weight: 600;
+}
+
+.sidebar-icon {
+  width: 20px;
+
+  display: flex;
+  justify-content: center;
+
+  font-size: 15px;
+}
+
+.sidebar-text {
+  flex: 1;
+}
+
+
+
+/* Notification count */
+
+.notification-count {
+  min-width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e74c3c;
+
+  color: white;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+
+
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.farmer-main {
+  width: calc(100% - 250px);
+
+  margin-left: 250px;
+
+  min-height: 100vh;
+  
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.farmer-header {
+  height: 72px;
+
+  position: sticky;
+  top: 0;
+
+  z-index: 900;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e6eae5;
+
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 28px;
+}
+
+
+/* Search */
+
+.search-box {
+  width: 420px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 14px;
+
+  background: #f5f7f4;
+
+  border: 1px solid #e3e8e1;
+
+  border-radius: 8px;
+
+  color: #8b958b;
+}
+
+.search-box input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-size: 13px;
+
+  color: #333;
+}
+
+.search-box input::placeholder {
+  color: #9ba39b;
+}
+
+
+/* Header Right */
+
+.header-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+}
+
+
+/* Language */
+
+.language {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 12px;
+
+  color: #59645b;
+
+  cursor: pointer;
+  float: right;
+}
+
+.language span button{
+  background: transparent;
+  border: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.language span button:hover{
+  color: #20743b;
+}
+
+
+/* Notification */
+
+.header-notification {
+  position: relative;
+
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #59645b;
+
+  cursor: pointer;
+}
+
+.header-notification span {
+  position: absolute;
+
+  top: -2px;
+  right: -3px;
+
+  width: 17px;
+  height: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e74c3c;
+
+  color: white;
+
+  font-size: 9px;
+}
+
+
+
+
+
+
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .farmer-sidebar {
+    width: 75px;
+  }
+
+  .farmer-main {
+    width: calc(100% - 75px);
+    margin-left: 70px;
+  }
+
+  .sidebar-logo h2,
+  .sidebar-logo p,
+  .sidebar-text,
+  .sidebar-quote {
+    display: none;
+  }
+
+  .sidebar-logo img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .sidebar-item {
+    justify-content: center;
+    padding: 13px 5px;
+  }
+
+  .sidebar-icon {
+    font-size: 18px;
+  }
+
+  .notification-count {
+    position: absolute;
+    right: 7px;
+    top: 5px;
+  }
+
+  .farmer-image {
+    display: none;
+  }
+
+  .search-box {
+    width: 300px;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .farmer-header {
+    padding: 0 15px;
+  }
+
+  .search-box {
+    width: 200px;
+  }
+
+  .language {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .language svg {
+    font-size: 14px;
+  }
+
+  .language span {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .language span button {
+    display: inline-block;
+    padding: 2px 3px;
+    font-size: 11px;
+    color: #59645b;
+  }
+
+  .language span button:hover {
+    color: #20743b;
+  }
+
+  .profile-text,
+  .profile > svg {
+    display: none;
+  }
+
+  .header-right {
+    gap: 10px;
+  }
+
+  .farmer-content {
+    padding: 18px 10px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.mobile-menu-btn {
+  display: none;
+
+  position: absolute;
+
+  top: 14px;
+  left: 17px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #079b69;
+
+  color: white;
+
+  font-size: 20px;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  z-index: 1200;
+}
+
+
+/* =========================================
+   TABLET / MOBILE
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .farmer-sidebar {
+    width: 72px;
+
+    transition:
+      width 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+
+  /* -----------------------------------------
+     CLOSED SIDEBAR
+  ----------------------------------------- */
+
+  .farmer-sidebar:not(.sidebar-open) {
+
+    width: 72px;
+
+  }
+
+
+  .farmer-sidebar:not(.sidebar-open)
+  .sidebar-logo h2,
+
+  .farmer-sidebar:not(.sidebar-open)
+  .sidebar-logo p,
+
+  .farmer-sidebar:not(.sidebar-open)
+  .sidebar-text,
+
+  .farmer-sidebar:not(.sidebar-open)
+  .back-btn {
+
+    display: none;
+
+  }
+
+
+  /* -----------------------------------------
+     OPEN SIDEBAR
+  ----------------------------------------- */
+
+  .farmer-sidebar.sidebar-open {
+
+    width: 250px;
+
+    box-shadow:
+      8px 0 25px rgba(0, 0, 0, 0.2);
+
+  }
+
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-logo h2,
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-logo p,
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-text,
+
+  .farmer-sidebar.sidebar-open
+  .back-btn {
+
+    display: block;
+
+  }
+
+
+  /* Logo */
+
+  .sidebar-logo img {
+    width: 48px;
+    height: 48px;
+  }
+
+
+  /* Closed sidebar icons */
+
+  .sidebar-item {
+
+    justify-content: center;
+
+    padding: 13px 5px;
+
+  }
+
+
+  .sidebar-icon {
+
+    font-size: 19px;
+
+  }
+
+
+  /* Open sidebar */
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-item {
+
+    justify-content: flex-start;
+
+    padding: 11px 13px;
+
+  }
+
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-text {
+
+    display: block;
+
+  }
+
+
+  /* Menu button */
+
+  .mobile-menu-btn {
+
+    display: flex;
+
+  }
+
+
+  /* When sidebar closed, menu button */
+  
+  .farmer-sidebar:not(.sidebar-open)
+  .mobile-menu-btn {
+
+    top: 12px;
+    left: 15px;
+
+  }
+
+
+  /* When open */
+
+  .farmer-sidebar.sidebar-open
+  .mobile-menu-btn {
+
+    left: auto;
+    right: 12px;
+
+    background: transparent;
+
+    font-size: 19px;
+
+  }
+
+
+  /* Main */
+
+  .farmer-main {
+
+    width: calc(100% - 72px);
+
+    margin-left: 72px;
+
+    transition:
+      margin-left 0.25s ease,
+      width 0.25s ease;
+
+  }
+
+
+  /* When sidebar opens */
+
+  .farmer-sidebar.sidebar-open
+  ~ .farmer-main {
+
+    width: calc(100% - 250px);
+
+    margin-left: 250px;
+
+  }
+
+
+  /* Hide bottom image */
+
+  .farmer-image {
+    display: none;
+  }
+
+}
+
+
+
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .farmer-sidebar {
+    width: 60px;
+  }
+
+
+  .farmer-sidebar:not(.sidebar-open) {
+    width: 60px;
+  }
+
+
+  .farmer-sidebar.sidebar-open {
+    width: 250px;
+  }
+
+
+  .farmer-main {
+
+    width: calc(100% - 60px);
+
+    margin-left: 60px;
+
+  }
+
+
+  .farmer-sidebar.sidebar-open
+  ~ .farmer-main {
+
+    width: calc(100% - 250px);
+
+    margin-left: 250px;
+
+  }
+
+
+  /* -----------------------------------------
+     HEADER
+  ----------------------------------------- */
+
+  .farmer-header {
+
+    height: 60px;
+
+    padding: 0 10px;
+
+  }
+
+
+  /* Search */
+
+  .search-box {
+
+    width: 150px;
+
+  }
+
+
+  /* Language stays visible */
+
+  .language {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 3px;
+
+    white-space: nowrap;
+
+  }
+
+
+  .language svg {
+
+    font-size: 14px;
+
+  }
+
+
+  .language span {
+
+    display: flex;
+
+    align-items: center;
+
+  }
+
+
+  .language span button {
+
+    display: inline-block;
+
+    font-size: 11px;
+
+    padding: 2px 3px;
+
+  }
+
+
+  .header-right {
+
+    gap: 6px;
+
+  }
+
+
+  .farmer-content {
+
+    padding: 15px 10px;
+
+  }
+
+ .back-btn{
+  width: 50px;
+ }
+
+
+
+}
+
+
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.mobile-menu-button {
+  display: none;
+
+  border: none;
+
+  background: transparent;
+
+  color: white;
+
+  cursor: pointer;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  font-size: 18px;
+}
+
+
+/* =========================================
+   MOBILE / TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  /* -----------------------------------------
+     SIDEBAR CLOSED
+  ----------------------------------------- */
+
+  .farmer-sidebar {
+
+    width: 68px;
+
+    transition:
+      width 0.25s ease;
+
+    overflow-x: hidden;
+
+  }
+
+
+  /* -----------------------------------------
+     MENU BUTTON
+  ----------------------------------------- */
+
+  .mobile-menu-button {
+
+    display: flex;
+    flex-direction: column;
+
+    width: 50px;
+    height: 57px;
+
+    margin: 12px auto 6px;
+    font-size: 13.5px;
+
+    border-radius: 8px;
+
+    background: #079b69;
+
+    .mobile-menu-button span {
+    display: block;
+
+    font-size: 12px !important;
+
+    line-height: 1;
+  }
+
+
+  }
+
+
+
+  /* CLOSED → ICON ONLY */
+
+  .farmer-sidebar:not(.sidebar-open)
+  .mobile-menu-button span {
+
+    display: none;
+
+  }
+
+
+  /* -----------------------------------------
+     BACK BUTTON
+  ----------------------------------------- */
+
+  .back-btn {
+
+    display: flex !important;
+    
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    width: 54px !important;
+    height: 44px;
+
+    margin: 5px auto 10px !important;
+
+    padding: 5px !important;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    color: white !important;
+
+    cursor: pointer;
+
+  }
+
+  .back-btn span {
+    display: block !important;
+
+    font-size: 11px;
+
+    line-height: 1;
+  }
+
+
+
+  /* CLOSED → BACK ICON ONLY */
+
+  .farmer-sidebar:not(.sidebar-open)
+  .back-btn span {
+
+    display: none;
+
+  }
+
+
+  /* -----------------------------------------
+     LOGO CLOSED
+  ----------------------------------------- */
+
+  .farmer-sidebar:not(.sidebar-open)
+  .sidebar-logo {
+
+    display: none;
+
+  }
+
+
+  /* -----------------------------------------
+     MENU CLOSED
+  ----------------------------------------- */
+
+
+
+  /* -----------------------------------------
+     OPEN SIDEBAR
+  ----------------------------------------- */
+
+  .farmer-sidebar.sidebar-open {
+
+    width: 280px;
+
+  
+  }
+
+
+  /* Menu button open */
+
+  .farmer-sidebar.sidebar-open
+  .mobile-menu-button {
+
+    width: auto;
+
+    padding: 0 12px;
+
+    margin: 12px 12px 5px auto;
+
+    background: transparent;
+
+    font-size: 17px;
+
+  }
+
+
+  /* Back open */
+
+  .farmer-sidebar.sidebar-open
+  .back-btn {
+
+    width: calc(100% - 24px) !important;
+
+    margin: 0 12px 10px !important;
+
+    justify-content: center;
+
+    font-size: 16px;
+
+  }
+
+
+  .farmer-sidebar.sidebar-open
+  .back-btn span {
+
+    display: inline;
+
+  }
+
+
+  /* Logo open */
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-logo {
+
+    display: block;
+
+    padding: 10px 15px 15px;
+
+  }
+
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-logo img {
+
+    width: 55px;
+
+    height: 55px;
+
+  }
+
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-logo h2 {
+
+    display: block;
+
+  }
+
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-logo p {
+
+    display: block;
+
+  }
+
+
+  /* Menu open */
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-menu {
+
+    display: block;
+
+  }
+
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-item {
+
+    justify-content: flex-start;
+
+    padding: 11px 13px;
+
+  }
+
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-text {
+
+    display: block;
+
+  }
+
+
+  /* -----------------------------------------
+     MAIN
+  ----------------------------------------- */
+
+  .farmer-main {
+
+    width: calc(100% - 68px);
+
+    margin-left: 68px;
+
+  }
+
+  @media (max-width: 480px) {
+    .back-btn{
+      width: 50%;
+    }
+  }
+
+}
+
+.back-btn{
+  width: 50%;
+  margin: auto 0;
+  margin-top: 20px;
+}
+
+
+
+
+@media (max-width: 1000px) {
+
+  .farmer-sidebar {
+    width: 68px;
+    overflow-x: hidden;
+  }
+
+  /* =========================
+     MENU BUTTON
+  ========================= */
+
+  .mobile-menu-button {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 54px;
+    height: 55px;
+
+    margin: 10px auto 6px;
+
+    padding: 4px;
+
+    gap: 2px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #079b69;
+    color: white;
+
+    cursor: pointer;
+  }
+
+  .mobile-menu-button svg {
+    font-size: 18px;
+  }
+
+  .mobile-menu-button span {
+    font-size: 10px !important;
+    line-height: 11px;
+  }
+
+
+  /* =========================
+     BACK BUTTON
+  ========================= */
+
+  .back-btn {
+    display: flex !important;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 54px !important;
+    height: 55px;
+
+    margin: 5px auto 10px !important;
+
+    padding: 4px !important;
+
+    gap: 2px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    color: white !important;
+
+    cursor: pointer;
+  }
+
+  .back-btn svg {
+    font-size: 18px;
+  }
+
+  .back-btn span {
+    display: block !important;
+
+    font-size: 10px !important;
+    line-height: 11px;
+  }
+
+
+  /* =========================
+     CLOSED SIDEBAR
+  ========================= */
+
+  .farmer-sidebar:not(.sidebar-open)
+  .sidebar-logo {
+    display: none;
+  }
+
+
+  /* IMPORTANT:
+     Keep navigation visible
+  */
+
+  .farmer-sidebar:not(.sidebar-open)
+  .sidebar-menu {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding: 5px 7px;
+
+    overflow-y: auto;
+  }
+
+
+  /* Navigation buttons */
+
+  .farmer-sidebar:not(.sidebar-open)
+  .sidebar-item {
+
+    width: 54px;
+
+    height: 48px;
+
+    margin-bottom: 4px;
+
+    padding: 0;
+
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: transparent;
+  }
+
+
+  /* Only icons */
+
+  .farmer-sidebar:not(.sidebar-open)
+  .sidebar-text {
+    display: none;
+  }
+
+
+  .farmer-sidebar:not(.sidebar-open)
+  .sidebar-icon {
+
+    width: auto;
+
+    font-size: 19px;
+
+    color: white;
+  }
+
+
+  /* Active item */
+
+  .farmer-sidebar:not(.sidebar-open)
+  .sidebar-item.active {
+
+    background: #079b69;
+
+    box-shadow:
+      inset 3px 0 #b7ffdb;
+  }
+
+
+  /* Hover */
+
+  .farmer-sidebar:not(.sidebar-open)
+  .sidebar-item:hover {
+
+    background: rgba(255, 255, 255, 0.10);
+  }
+
+
+  /* =========================
+     OPEN SIDEBAR
+  ========================= */
+
+  .farmer-sidebar.sidebar-open {
+
+    width: 280px;
+
+    box-shadow:
+      8px 0 25px rgba(0, 0, 0, 0.25);
+  }
+
+
+  .farmer-sidebar.sidebar-open
+  .mobile-menu-button {
+
+    flex-direction: row;
+
+    width: auto;
+
+    height: 35px;
+
+    margin: 8px 12px 5px auto;
+
+    padding: 0 10px;
+
+    background: transparent;
+
+    gap: 5px;
+  }
+
+
+  .farmer-sidebar.sidebar-open
+  .mobile-menu-button span {
+
+    font-size: 11px !important;
+  }
+
+
+  .farmer-sidebar.sidebar-open
+  .back-btn {
+
+    flex-direction: row;
+
+    width: calc(100% - 24px) !important;
+
+    height: 38px;
+
+    margin: 0 12px 10px !important;
+
+    gap: 6px;
+  }
+
+
+  .farmer-sidebar.sidebar-open
+  .back-btn span {
+
+    font-size: 13px !important;
+  }
+
+
+  /* Logo */
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-logo {
+
+    display: block;
+
+    padding: 10px 15px 15px;
+  }
+
+
+  /* Full menu */
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-menu {
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 10px;
+  }
+
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-item {
+
+    width: 100%;
+
+    height: auto;
+
+    padding: 11px 13px;
+
+    justify-content: flex-start;
+  }
+
+
+  .farmer-sidebar.sidebar-open
+  .sidebar-text {
+
+    display: block;
+  }
+
+
+
+
+
+
+}

@@ -1014,7 +1014,7 @@ class MyCropView(View):
 
         crops = (
             CropRegistration.objects
-            .all()
+            .filter(farmer=request.user)
             .order_by("-created_at")
         )
 

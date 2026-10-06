@@ -5,8 +5,6 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Navbar'
-import DiseasePage from './Plants&Disease/DiseasePage'
-import DiseaseInfo from './Components/DiseaseInfo'
 import CropRegistration from './Registration/CropRegistration'
 import FarmerDashboard from './Registration/FarmerDashboard '
 import PageTransition from './Pages/PageTransition'

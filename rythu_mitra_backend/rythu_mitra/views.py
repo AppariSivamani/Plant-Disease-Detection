@@ -15,7 +15,6 @@ from rest_framework.authentication import TokenAuthentication
 from django.contrib.auth import authenticate
 from rest_framework.authtoken.models import Token
 
-from .ai_model.predict import predict_disease
 from .disease_data import DISEASE_DATA
 from .crop_data import CROP_DATA
 from .models import Notification
@@ -39,6 +38,7 @@ from rest_framework.decorators import api_view
 
 @csrf_exempt
 def predict_image(request):
+    from .ai_model.predict import predict_disease
 
     if request.method != "POST":
 

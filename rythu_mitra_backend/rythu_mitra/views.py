@@ -1005,8 +1005,6 @@ class CropRegistrationView(APIView):
 
 
 class MyCropView(View):
-    authentication_classes = [TokenAuthentication]
-    permission_classes = [IsAuthenticated]
 
     def get(self, request):
 
@@ -1016,7 +1014,7 @@ class MyCropView(View):
 
         crops = (
             CropRegistration.objects
-            .filter(farmer=request.user)
+            .all()
             .order_by("-created_at")
         )
 

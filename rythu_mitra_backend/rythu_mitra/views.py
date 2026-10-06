@@ -1005,6 +1005,8 @@ class CropRegistrationView(APIView):
 
 
 class MyCropView(View):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request):
 

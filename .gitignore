@@ -17,6 +17,9 @@ dataset/
 
 train/
 
+certs/
+*.pem
+
 # Frontend
 node_modules/
 dist/

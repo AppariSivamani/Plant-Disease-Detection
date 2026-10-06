@@ -9,6 +9,7 @@ import TopPredictions from "../components/TopPredictions";
 import Footer from "../components/Footer";
 import Loader from "../components/Loader";
 
+
 import { useLanguage } from "../context/LanguageContext";
 
 

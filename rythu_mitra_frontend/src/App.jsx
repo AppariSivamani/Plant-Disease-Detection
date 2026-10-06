@@ -32,8 +32,6 @@ function App() {
 
           <Route path="/welcome-page" element={<WelcomePage />} />
 
-          <Route path='/disease-info/:disease' element={<DiseaseInfo />} />
-
           <Route path='/crop-registration' element={<CropRegistration />} />
 
           <Route path="/contact" element={<Contact />} />

@@ -23,7 +23,7 @@ import {
   FaEdit,
 } from "react-icons/fa";
 
-import "./DashboardPages.css";
+import "./Dashboardpages.css";
 
 
 const API_BASE_URL = "https://plant-disease-detection-1-xjj3.onrender.com";

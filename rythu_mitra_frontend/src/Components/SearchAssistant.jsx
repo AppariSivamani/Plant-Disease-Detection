@@ -131,7 +131,7 @@ function SearchAssistant() {
 
             const response = await axios.post(
 
-                "http://127.0.0.1:8000/api/assistant/",
+                "https://plant-disease-detection-1-xjj3.onrender.com/api/assistant/",
 
                 {
                     question: question.trim(),

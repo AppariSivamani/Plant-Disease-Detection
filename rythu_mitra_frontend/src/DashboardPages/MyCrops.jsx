@@ -26,7 +26,7 @@ import {
 import "./DashboardPages.css";
 
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = "https://plant-disease-detection-1-xjj3.onrender.com";
 
 
 // --------------------------------------------------

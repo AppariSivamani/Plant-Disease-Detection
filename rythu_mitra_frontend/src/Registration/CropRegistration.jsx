@@ -864,7 +864,7 @@ function Registration() {
             const response =
                 await axios.post(
 
-                    "http://127.0.0.1:8000/api/crop-registration/",
+                    "https://plant-disease-detection-1-xjj3.onrender.com/api/crop-registration/",
 
                     submitData,
 

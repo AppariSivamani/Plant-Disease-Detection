@@ -74,7 +74,7 @@ function FarmerDashboard() {
                 setLoading(true);
 
                 const response = await axios.get(
-                    "http://127.0.0.1:8000/api/my-crop/"
+                    "https://plant-disease-detection-1-xjj3.onrender.com/api/my-crop/"
                 );
 
                 console.log(
@@ -174,7 +174,7 @@ function FarmerDashboard() {
         try {
 
             const response = await axios.get(
-                `http://127.0.0.1:8000/api/notifications/${cropId}/`
+                `https://plant-disease-detection-1-xjj3.onrender.com/api/notifications/${cropId}/`
             );
 
             if (response.data.success) {
@@ -269,7 +269,7 @@ function FarmerDashboard() {
             }));
 
             const response = await axios.get(
-                "http://127.0.0.1:8000/api/farmer-weather/",
+                "https://plant-disease-detection-1-xjj3.onrender.com/api/farmer-weather/",
                 {
                     params: {
                         village: farmer.village,
@@ -377,7 +377,7 @@ function FarmerDashboard() {
         try {
 
             const response = await axios.get(
-                "http://127.0.0.1:8000/api/farmer-weather-alert/",
+                "https://plant-disease-detection-1-xjj3.onrender.com/api/farmer-weather-alert/",
                 {
                     params: {
                         village: farmer.village,

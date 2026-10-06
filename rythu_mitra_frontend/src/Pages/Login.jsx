@@ -35,7 +35,7 @@ const Login = () => {
       setLoading(true);
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/login/",
+        "https://plant-disease-detection-1-xjj3.onrender.com/api/login/",
         {
           phone_number: phoneNumber,
           password: password,

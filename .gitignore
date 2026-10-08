@@ -30,6 +30,11 @@ dist/
 *.pkl
 *.joblib
 
+# Allow prediction models
+!models/best_model.keras
+!models/rice_disease_model.keras
+!models/class_names.json
+
 # SQLite
 db.sqlite3
 
